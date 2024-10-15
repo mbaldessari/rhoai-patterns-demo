@@ -3,7 +3,7 @@ clusterGroup:
   isHubCluster: true
   namespaces:
     - openshift-serverless
-    - openshift-operators
+    #- openshift-operators
     - openshift-nfd
     - nvidia-gpu-operator
     - redhat-ods-operator
@@ -15,11 +15,13 @@ clusterGroup:
       namespace: openshift-serverless
       channel: stable
       source: redhat-operators
-    istio:
-      name: servicemeshoperator
-      namespace: openshift-operators
-      channel: stable
-      source: redhat-operators
+      sourceNamespace: openshift-marketplace
+    #istio:
+    #  name: servicemeshoperator
+    #  namespace: openshift-operators
+    #  channel: stable
+    #  source: redhat-operators
+    #  sourceNamespace: openshift-marketplace
     nfd:
       name: nfd
       namespace: openshift-nfd
@@ -32,13 +34,15 @@ clusterGroup:
     authorino:
       name: authorino-operator
       namespace: openshift-operators
-      channel: managed-services
+      channel: tech-preview-v1
       source: redhat-operators
-    rhoai:
-      name: rhods-operator
-      namespace: redhat-ods-operator
-      channel: fast
-      source: redhat-operators
+      sourceNamespace: openshift-marketplace
+    #rhoai:
+    #  name: rhods-operator
+    #  namespace: redhat-ods-operator
+    #  channel: stable
+    #  source: redhat-operators
+    #  sourceNamespace: openshift-marketplace
 
   projects:
     - openshift-ai
@@ -63,23 +67,23 @@ clusterGroup:
   #   - '/overrides/values-{{ $.Values.global.hubClusterDomain }}.yaml'
   #   - '/overrides/values-{{ $.Values.global.localClusterDomain }}.yaml'
   applications:
-    nfd-config:
-      name: nfd-config
-      namespace: openshift-nfd
-      project: openshift-ai
-      path: charts/all/nfd-config
+    #nfd-config:
+    #  name: nfd-config
+    #  namespace: openshift-nfd
+    #  project: openshift-ai
+    #  path: charts/all/nfd-config
 
-    nvidia-config:
-      name: nvidia-config
-      namespace: nvidia-gpu-operator
-      project: openshift-ai
-      path: charts/all/nvidia-gpu-config
+    #nvidia-config:
+    #  name: nvidia-config
+    #  namespace: nvidia-gpu-operator
+    #  project: openshift-ai
+    #  path: charts/all/nvidia-gpu-config
 
-    rhoai-config:
-      name: rhoai-config
-      namespace: redhat-ods-operator
-      project: openshift-ai
-      path: charts/all/rhoai-config
+    #rhoai-config:
+    #  name: rhoai-config
+    #  namespace: redhat-ods-operator
+    #  project: openshift-ai
+    #  path: charts/all/rhoai-config
 
     vault:
       name: vault
