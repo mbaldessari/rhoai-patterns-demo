@@ -37,12 +37,12 @@ clusterGroup:
       channel: tech-preview-v1
       source: redhat-operators
       sourceNamespace: openshift-marketplace
-    #rhoai:
-    #  name: rhods-operator
-    #  namespace: redhat-ods-operator
-    #  channel: stable
-    #  source: redhat-operators
-    #  sourceNamespace: openshift-marketplace
+    rhoai:
+      name: rhods-operator
+      namespace: redhat-ods-operator
+      channel: stable
+      source: redhat-operators
+      sourceNamespace: openshift-marketplace
 
   projects:
     - openshift-ai
@@ -79,11 +79,11 @@ clusterGroup:
       project: openshift-ai
       path: charts/all/nvidia-gpu-config
 
-    #rhoai-config:
-    #  name: rhoai-config
-    #  namespace: redhat-ods-operator
-    #  project: openshift-ai
-    #  path: charts/all/rhoai-config
+    rhoai-config:
+      name: rhoai-config
+      namespace: redhat-ods-operator
+      project: openshift-ai
+      path: charts/all/rhoai-config
 
     vault:
       name: vault
