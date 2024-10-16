@@ -6,6 +6,8 @@ clusterGroup:
     - openshift-nfd
     - nvidia-gpu-operator
     - redhat-ods-operator
+        operatorGroup: true
+        targetNamespaces:
     - vault
     - golang-external-secrets
   subscriptions:
