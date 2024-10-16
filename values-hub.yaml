@@ -3,7 +3,6 @@ clusterGroup:
   isHubCluster: true
   namespaces:
     - openshift-serverless
-    #- openshift-operators
     - openshift-nfd
     - nvidia-gpu-operator
     - redhat-ods-operator
@@ -12,10 +11,10 @@ clusterGroup:
   subscriptions:
     serverless:
       name: serverless-operator
-      namespace: openshift-serverless
-      channel: stable
-      source: redhat-operators
-      sourceNamespace: openshift-marketplace
+      #namespace: openshift-serverless
+      #channel: stable
+      #source: redhat-operators
+      #sourceNamespace: openshift-marketplace
     istio:
       name: servicemeshoperator
       namespace: openshift-operators
