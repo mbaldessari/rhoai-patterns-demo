@@ -78,7 +78,7 @@ clusterGroup:
       name: nvidia-config
       namespace: nvidia-gpu-operator
       project: openshift-ai
-      path: charts/all/nvidia-gpu-config
+      path: charts/all/nvidia-config
 
     #rhoai-config:
     #  name: rhoai-config
