@@ -11,6 +11,7 @@ clusterGroup:
     - vault
     - golang-external-secrets
     - chromadb-ns
+    - minio-ns
   subscriptions:
     serverless:
       name: serverless-operator
@@ -50,6 +51,7 @@ clusterGroup:
     - hub
     - openshift-ai
     - vectordb
+    - s3
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   #sharedValueFiles:
@@ -108,3 +110,10 @@ clusterGroup:
       namespace: chromadb-ns
       project: vectordb
       path: charts/all/chromadb
+
+    minio:
+      name: minio
+      namespace: minio-ns
+      project: s3
+      path: charts/all/minio
+
