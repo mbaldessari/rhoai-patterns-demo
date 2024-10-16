@@ -21,25 +21,29 @@ The goal for this pattern is to:
 ## How to use it:
 
 * Copy the secrets:
-  ```bash
-  $ cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
-  ```
+
+    ```bash
+    cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
+    ```
 
 * Install the pattern
-  ```bash
-  $ ./pattern.sh make install
-  ```
+
+    ```bash
+    ./pattern.sh make install
+    ```
 
 * If secrets are added/modified after installation, then:
-  ```bash
-  $ cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
-  $ ./pattern.sh make load-secrets
-  ```
+
+    ```bash
+    cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
+    ./pattern.sh make load-secrets
+    ```
 
 * If your admin user do not have access to the Cluster ArgoCD, then ensure that
   the ArgoCD object have default_policy: role:admin, or configure the specific
   group policies as needed
-  ```bash
-  $ oc -n openshift-gitops edit argocd  openshift-gitops
-  ```
+
+    ```bash
+    oc -n openshift-gitops edit argocd  openshift-gitops
+    ```
 
