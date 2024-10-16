@@ -12,6 +12,14 @@ clusterGroup:
     - golang-external-secrets
     - chromadb-ns
     - minio-ns
+    - rag-demo:
+        annotations:
+          openshift.io/description: 'Databricks RAG Workspace'
+          openshift.io/display-name: 'Databricks RAG Workspace'
+        labels:
+          kubernetes.io/metadata.name: "rag-demo"
+          modelmesh-enabled: 'false'
+          opendatahub.io/dashboard: 'true'
   subscriptions:
     serverless:
       name: serverless-operator
@@ -52,6 +60,7 @@ clusterGroup:
     - openshift-ai
     - vectordb
     - s3
+    - rag
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   #sharedValueFiles:
@@ -117,3 +126,8 @@ clusterGroup:
       project: s3
       path: charts/all/minio
 
+    rag-demo:
+      name: rag-demo
+      namespace: rag-demo
+      project: rag
+      path: charts/all/rag
