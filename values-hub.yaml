@@ -89,7 +89,7 @@ clusterGroup:
     vault:
       name: vault
       namespace: vault
-      project: ohub
+      project: hub
       chart: hashicorp-vault
       chartVersion: 0.1.*
     golang-external-secrets:
