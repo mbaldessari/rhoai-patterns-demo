@@ -2,7 +2,7 @@ clusterGroup:
   name: hub
   isHubCluster: true
   namespaces:
-    - openshift-serverless
+    #- openshift-serverless
     #- openshift-operators
     - openshift-nfd
     - nvidia-gpu-operator
