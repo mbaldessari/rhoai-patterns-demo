@@ -2,20 +2,20 @@ clusterGroup:
   name: hub
   isHubCluster: true
   namespaces:
-    - openshift-serverless
+    #- openshift-serverless
     #- openshift-operators
     - openshift-nfd
     - nvidia-gpu-operator
-    - redhat-ods-operator
+    #- redhat-ods-operator
     - vault
     - golang-external-secrets
   subscriptions:
-    knative:
-      name: serverless-operator
-      namespace: openshift-serverless
-      channel: stable
-      source: redhat-operators
-      sourceNamespace: openshift-marketplace
+    #knative:
+    #  name: serverless-operator
+    #  namespace: openshift-serverless
+    #  channel: stable
+    #  source: redhat-operators
+    #  sourceNamespace: openshift-marketplace
     istio:
       name: servicemeshoperator
       namespace: openshift-operators
@@ -37,14 +37,15 @@ clusterGroup:
       channel: tech-preview-v1
       source: redhat-operators
       sourceNamespace: openshift-marketplace
-    rhoai:
-      name: rhods-operator
-      namespace: redhat-ods-operator
-      channel: stable
-      source: redhat-operators
-      sourceNamespace: openshift-marketplace
+    #rhoai:
+    #  name: rhods-operator
+    #  namespace: redhat-ods-operator
+    #  channel: stable
+    #  source: redhat-operators
+    #  sourceNamespace: openshift-marketplace
 
-  projects:
+  projects
+    - hub
     - openshift-ai
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
@@ -79,21 +80,21 @@ clusterGroup:
       project: openshift-ai
       path: charts/all/nvidia-gpu-config
 
-    rhoai-config:
-      name: rhoai-config
-      namespace: redhat-ods-operator
-      project: openshift-ai
-      path: charts/all/rhoai-config
+    #rhoai-config:
+    #  name: rhoai-config
+    #  namespace: redhat-ods-operator
+    #  project: openshift-ai
+    #  path: charts/all/rhoai-config
 
     vault:
       name: vault
       namespace: vault
-      project: openshift-ai
+      project: ohub
       chart: hashicorp-vault
       chartVersion: 0.1.*
     golang-external-secrets:
       name: golang-external-secrets
       namespace: golang-external-secrets
-      project: openshift-ai
+      project: hub
       chart: golang-external-secrets
       chartVersion: 0.1.*
