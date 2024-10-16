@@ -34,15 +34,15 @@ spec:
     enableExternalRoute: false
     externalStorage:
       basePath: ""
-      bucket: pipelines
-      host: {{ $.Values.s3.default_host }}
+      bucket: {{ $.Values.pipeline.bucket }}
+      host: {{ $.Values.pipeline.default_host }}
       port: ""
       region: no-region
       s3CredentialsSecret:
         accessKey: AWS_ACCESS_KEY_ID
         secretKey: AWS_SECRET_ACCESS_KEY
         secretName: dashboard-dspa-secret
-      scheme: https
+      scheme: {{ $.Values.pipeline.scheme }}
   persistenceAgent:
     deploy: true
     numWorkers: 2
