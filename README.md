@@ -33,7 +33,7 @@ $ ./pattern.sh make install
 * If secrets are added/modified after installation, then:
 ```bash
 $ cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
-$ ./pattern.sh load-secrets
+$ ./pattern.sh make load-secrets
 ```
 
 * If your admin user do not have access to the Cluster ArgoCD, then ensure that
