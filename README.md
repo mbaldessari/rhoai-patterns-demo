@@ -18,27 +18,33 @@ The goal for this pattern is to:
 * Enable cross-cluster governance and application lifecycle management.
 * Securely manage secrets across the deployment.
 
-## How to use it:
+## Deployment
+
+The steps are the next:
 
 * Copy the secrets:
-```bash
-$ cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
-```
+  
+    ```bash
+    cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
+    ```
 
-* Install the pattern
-```bash
-$ ./pattern.sh make install
-```
+* Install the pattern:
+  
+    ```bash
+    ./pattern.sh make install
+    ```
 
-* If secrets are added/modified after installation, then:
-```bash
-$ cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
-$ ./pattern.sh make load-secrets
-```
+* If secrets are added/modified after installation then:
+
+    ```bash
+    cp values-secret.yaml.template ~/.config/hybrid-cloud-patterns/values-secret-rhoai-pattern-demo.yaml
+    ./pattern.sh make load-secrets
+    ```
 
 * If your admin user do not have access to the Cluster ArgoCD, then ensure that
-  the ArgoCD object have default_policy: role:admin, or configure the specific
-  group policies as needed
-  ```bash
-  $ oc -n openshift-gitops edit argocd  openshift-gitops
-  ```
+  the ArgoCD object have `default_policy: role:admin`, or configure the specific
+  group policies as needed:
+
+    ```bash
+    oc -n openshift-gitops edit argocd  openshift-gitops
+    ```
