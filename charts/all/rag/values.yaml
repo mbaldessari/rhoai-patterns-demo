@@ -8,4 +8,5 @@ bucketSecrets:
 
 s3:
   default_endpoint: http://minio-service.minio-ns.svc.cluster.local:9000
+  default_host: minio-service.minio-ns.svc.cluster.local:9000
   default_region: none
