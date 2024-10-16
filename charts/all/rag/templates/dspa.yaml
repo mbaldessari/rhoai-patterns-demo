@@ -36,7 +36,7 @@ spec:
       basePath: ""
       bucket: {{ $.Values.pipeline.bucket }}
       host: {{ $.Values.pipeline.default_host }}
-      port: ""
+      port: {{ $.Values.pipeline.port }}
       region: no-region
       s3CredentialsSecret:
         accessKey: AWS_ACCESS_KEY_ID
