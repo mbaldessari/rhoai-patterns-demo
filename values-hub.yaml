@@ -10,6 +10,7 @@ clusterGroup:
         targetNamespaces:
     - vault
     - golang-external-secrets
+    - chromadb-ns
   subscriptions:
     serverless:
       name: serverless-operator
@@ -48,6 +49,7 @@ clusterGroup:
   projects:
     - hub
     - openshift-ai
+    - vectordb
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   #sharedValueFiles:
@@ -100,3 +102,9 @@ clusterGroup:
       project: hub
       chart: golang-external-secrets
       chartVersion: 0.1.*
+
+    chromadb:
+      name: chromadb
+      namespace: chromadb-ns
+      project: vectordb
+      path: charts/all/chromadb
