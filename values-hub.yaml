@@ -54,6 +54,10 @@ clusterGroup:
       channel: alpha
       source: redhat-operators
       sourceNamespace: openshift-marketplace
+      config:
+        env:
+          - name: DISABLE_DSC_CONFIG
+            value: "True"
 
   projects:
     - hub
