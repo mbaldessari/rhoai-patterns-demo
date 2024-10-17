@@ -14,4 +14,4 @@ pipeline:
   default_host: minio-service.minio-ns.svc.cluster.local
   scheme: http
   bucket: pipelines
-  port: 9000
+  port: "9000"
