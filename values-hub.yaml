@@ -13,6 +13,8 @@ clusterGroup:
   subscriptions:
     serverless:
       name: serverless-operator
+      annotations:
+        argocd.argoproj.io/sync-wave: "-50"
       #namespace: openshift-serverless
       #channel: stable
       #source: redhat-operators
@@ -23,6 +25,8 @@ clusterGroup:
       channel: stable
       source: redhat-operators
       sourceNamespace: openshift-marketplace
+      annotations:
+        argocd.argoproj.io/sync-wave: "-50"
     nfd:
       name: nfd
       namespace: openshift-nfd
@@ -38,6 +42,8 @@ clusterGroup:
       channel: tech-preview-v1
       source: redhat-operators
       sourceNamespace: openshift-marketplace
+      annotations:
+        argocd.argoproj.io/sync-wave: "-50"
     rhoai:
       name: rhods-operator
       namespace: redhat-ods-operator
