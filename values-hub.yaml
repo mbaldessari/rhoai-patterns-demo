@@ -49,10 +49,10 @@ clusterGroup:
       source: redhat-operators
       sourceNamespace: openshift-marketplace
     rhoai:
-      name: rhods-operator
+      name: opendatahub-operator
       namespace: redhat-ods-operator
       channel: alpha
-      source: redhat-operators
+      source: test-opendatahub-operator
       sourceNamespace: openshift-marketplace
 
   projects:
