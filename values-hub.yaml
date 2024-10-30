@@ -51,7 +51,7 @@ clusterGroup:
     rhoai:
       name: opendatahub-operator
       namespace: redhat-ods-operator
-      channel: alpha
+      channel: fast
       source: test-opendatahub-operator
       sourceNamespace: openshift-marketplace
 
